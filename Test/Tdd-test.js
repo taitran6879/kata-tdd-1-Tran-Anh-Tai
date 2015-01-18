@@ -8,9 +8,16 @@ var Add = function (numbers) {
         }
         else{
             var result = 0;
-            var nums = numbers.split(",");
-            for(var i = 0; i < nums.length; i++){
-                result += parseInt(nums[i]);
+            var arrayByDefault = numbers.split(",");
+            for(var i = 0; i < arrayByDefault.length; i++){
+                var num = arrayByDefault[i];
+                if(num.indexOf("\n") > -1){
+                    var arrayByLines = num.split("\n");
+                    for(var i = 0; i < arrayByLines.length; i++){
+                        result += parseInt(arrayByLines[i]);
+                    }
+                }
+                result += parseInt(arrayByDefault[i]);
             }
             return result;
         }

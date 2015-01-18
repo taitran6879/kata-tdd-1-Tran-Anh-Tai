@@ -30,4 +30,13 @@ describe("Test String Numbers", function () {
 
         expect(result).toBe(expected);
     });
+
+    it("can handle new lines between numbers"), function () {
+        var num = "1\n2,3";
+        var expected = 6;
+
+        var result = Add(num);
+
+        expect(result).toBe(expected);
+    }
 });
